@@ -1,0 +1,42 @@
+*::before,::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.form{
+    position:relative;
+    width: 100%;
+    max-width: 20rem;
+}
+.form-input{
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.8em;
+    background: none;
+    color: white;
+    border: 2px solid var(red);
+    border-radius: 0.5rem;
+    outline: none;
+}
+.form-input:hover{
+    border-color: var(--clr-primary-light);
+}
+.form-input:focus{
+    border-color: var(--clr-primary);
+}
+.form_label{
+    color: white;
+    position: absolute;
+    top: 0.8em;/*为了和input的padding对齐*/
+    left:1em;
+    cursor: text;
+    user-select: none;
+    border-color: var(--clr-bg);
+    padding:0 0.5em;
+    transition:  top 200ms ease-in,font-size 200ms ease-in;
+}
+.form-input:focus~.form_label,.form-input:not(:placeholder-shown)~.form_label{
+    top: -0.5em;
+    font-size: 0.8em;
+}
